@@ -5,10 +5,10 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 })
 export class FlightinfoService {
   // url:string = "http://localhost:3000";
-  // url1:string = "http://localhost:8989/admin/API";
-  // url2:string = "http://localhost:8989/user";
-  url1: string = "http://ec2-18-189-20-2.us-east-2.compute.amazonaws.com:8989/admin/API";
-  url2: string = "http://ec2-18-189-20-2.us-east-2.compute.amazonaws.com:8989/user";
+   url1:string = "http://localhost:8989/admin/API";
+   url2:string = "http://localhost:8989/user";
+ // url1: string = "http://ec2-18-189-20-2.us-east-2.compute.amazonaws.com:8989/admin/API";
+  //url2: string = "http://ec2-18-189-20-2.us-east-2.compute.amazonaws.com:8989/user";
   //url3:string = "http://localhost:8989/admin/API";
   //url4:string = "http://localhost:8989/user";
   //header:string="bearer "+JSON.stringify(localStorage.getItem('token'))

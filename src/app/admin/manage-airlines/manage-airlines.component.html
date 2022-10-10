@@ -1,7 +1,7 @@
 <div *ngIf='!isedit'>
   <button type="button" mat-icon-button style="float:right;margin-bottom: 5px;" class="btn btn-success"
     (click)="toggleShow()">
-    <mat-icon>add</mat-icon> Add Airlines
+    <mat-icon>add</mat-icon> Add Course
   </button>
 </div>
 <div *ngIf='visibile'>
@@ -9,7 +9,7 @@
     <form ngNativeValidate #myForm="ngForm">
       <h2>Add Airline</h2>
       <div class="form-group">
-        <input name="airlinename" class="inp" [(ngModel)]="airlinename" placeholder="Airline Name" required><br />
+        <input name="airlinename" class="inp" [(ngModel)]="airlinename" placeholder="Course Name" required><br />
       </div>
       <div class="form-group">
         <input name="logo" class="inp" [(ngModel)]="logo" value="" placeholder="Logo Link"><br />
