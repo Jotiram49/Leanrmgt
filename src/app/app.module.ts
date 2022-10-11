@@ -20,7 +20,7 @@ import { NgxMaterialTimepickerModule } from 'ngx-material-timepicker';
 import { UserDetailsComponent } from './user/user-details/user-details.component';
 import { DatePipe } from '@angular/common';
 import { AuthHttpInterceptorService } from './_Services/auth-http-interceptor.service';
-import { ReportComponent } from './admin/report/report.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -33,7 +33,6 @@ import { ReportComponent } from './admin/report/report.component';
     RegistrationComponent,
     AddCourseComponent,
     UserDetailsComponent,
-    ReportComponent
     //NgxMaterialTimepickerModule
   ],
   imports: [

@@ -6,7 +6,6 @@ import { map } from 'rxjs/operators';
 }
 )
 export class LoginSerService {
-  //url:string = "http://localhost:3000";
   url1:string= "http://localhost:8989/user/userController"
   url2:string="http://localhost:8989/authenticate"
   //url1: string = "http://ec2-18-189-20-2.us-east-2.compute.amazonaws.com:8989/user/userController"
