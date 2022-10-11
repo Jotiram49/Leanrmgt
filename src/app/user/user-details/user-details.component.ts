@@ -3,11 +3,11 @@ import { Component, OnInit } from '@angular/core';
 import { FlightinfoService } from 'src/app/_Services/flightinfo.service';
 
 @Component({
-  selector: 'app-history',
-  templateUrl: './history.component.html',
-  styleUrls: ['./history.component.scss']
+  selector: 'app-user-details',
+  templateUrl: './user-details.component.html',
+  styleUrls: ['./user-details.component.scss']
 })
-export class HistoryComponent implements OnInit {
+export class UserDetailsComponent implements OnInit {
   userid: any = localStorage.getItem('User');
   result: any = {}
   errorMessage = ""
@@ -72,3 +72,4 @@ export class HistoryComponent implements OnInit {
   }
 
 }
+

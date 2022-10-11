@@ -17,10 +17,7 @@ import { LoginSerService } from './_Services/login-ser.service';
 import { AuthGuard } from './auth.guard';
 import { AddCourseComponent } from './admin/add-course/add-course.component';
 import { NgxMaterialTimepickerModule } from 'ngx-material-timepicker';
-import { BookFlightComponent } from './user/book-flight/book-flight.component';
-import { ManageBookingComponent } from './user/manage-booking/manage-booking.component';
-import { HistoryComponent } from './user/history/history.component';
-import { PassengerDetailsComponent } from './user/passenger-details/passenger-details.component';
+import { UserDetailsComponent } from './user/user-details/user-details.component';
 import { DatePipe } from '@angular/common';
 import { AuthHttpInterceptorService } from './_Services/auth-http-interceptor.service';
 import { ReportComponent } from './admin/report/report.component';
@@ -35,10 +32,7 @@ import { ReportComponent } from './admin/report/report.component';
     UserComponent,
     RegistrationComponent,
     AddCourseComponent,
-    BookFlightComponent,
-    ManageBookingComponent,
-    HistoryComponent,
-    PassengerDetailsComponent,
+    UserDetailsComponent,
     ReportComponent
     //NgxMaterialTimepickerModule
   ],

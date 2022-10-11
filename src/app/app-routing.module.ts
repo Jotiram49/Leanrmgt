@@ -8,10 +8,7 @@ import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './shared/login/login.component';
 import { RegistrationComponent } from './shared/registration/registration.component';
 import { UserGuard } from './user.guard';
-import { BookFlightComponent } from './user/book-flight/book-flight.component';
-import { HistoryComponent } from './user/history/history.component';
-import { ManageBookingComponent } from './user/manage-booking/manage-booking.component';
-import { PassengerDetailsComponent } from './user/passenger-details/passenger-details.component';
+import { UserDetailsComponent } from './user/user-details/user-details.component';
 import { UserComponent } from './user/user.component';
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -39,25 +36,11 @@ const routes: Routes = [
     component: UserComponent,
     children: [
       {
-        path: 'Book-flight',
-        component: BookFlightComponent,
+        path: 'User-details',
+        component: UserDetailsComponent,
         canActivate: [UserGuard]
-      },
-      {
-        path: 'Manage-booking',
-        component: ManageBookingComponent,
-        canActivate: [UserGuard]
-      },
-      {
-        path: 'History',
-        component: HistoryComponent,
-        canActivate: [UserGuard]
-      },
-      {
-        path: 'Passenger-Details/:schlid',
-        component: PassengerDetailsComponent,
-        canActivate: [UserGuard]
-      },
+      }
+      
     ]
   },
   { path: '**', component: HomeComponent },
