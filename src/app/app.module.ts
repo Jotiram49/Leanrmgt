@@ -15,9 +15,7 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from "@angular/common/http";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { LoginSerService } from './_Services/login-ser.service';
 import { AuthGuard } from './auth.guard';
-
 import { FlightComponent } from './flight/flight.component';
-
 import { AddCourseComponent } from './admin/add-course/add-course.component';
 import { NgxMaterialTimepickerModule } from 'ngx-material-timepicker';
 import { BookFlightComponent } from './user/book-flight/book-flight.component';

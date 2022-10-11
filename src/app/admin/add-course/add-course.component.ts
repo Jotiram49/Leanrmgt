@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FlightinfoService } from 'src/app/_Services/flightinfo.service';
+import { CourseService } from 'src/app/_Services/course.service';
 @Component({
   selector: 'app-add-course',
   templateUrl: './add-course.component.html',
@@ -9,20 +9,21 @@ export class AddCourseComponent implements OnInit {
   errorMessage: string = ""
   result: any = {}
   Isresult = false
-  airlinename = "";
-  logo = "";
+  coursename = "";
+  url = "";
   visibile = false;
-  conctnum = 1000000000;
-  conctadd = "";
+  courseduration = 0;
+  coursedescription = "";
+  technology = "";
   total_airlines = 0
   isedit = false
   airId = ""
-  constructor(private flightinfoService: FlightinfoService) { }
+  constructor(private courseService: CourseService) { }
   ngOnInit(): void {
-    this.loadAllAirlines()
+    this.loadAllCourse()
   }
-  loadAllAirlines() {
-    this.flightinfoService.getAirlines()
+  loadAllCourse() {
+    this.courseService.getCourse()
       .subscribe((res: any) => {
         this.total_airlines = res.length;
         if (this.total_airlines != 0) {
@@ -35,14 +36,13 @@ export class AddCourseComponent implements OnInit {
           this.errorMessage = err.message;
         })
   }
-  deleteAirline(airId: string) {
-    if (confirm("Are you sure to delete the Airline?")) {
-      this.flightinfoService.deleteAirline(airId)
+  deleteCourse(airId: string) {
+    if (confirm("Are you sure to delete the course?")) {
+      this.courseService.deleteAirline(airId)
         .subscribe(
           () => {
-            console.log("Employee with Id =" + airId + "deleted");
-            alert("Airline deleted.")
-            this.loadAllAirlines()
+            alert("course deleted.")
+            this.loadAllCourse()
           },
           (err) => console.log(err)
         );
@@ -51,24 +51,27 @@ export class AddCourseComponent implements OnInit {
 
   }
 
-  SaveAirline() {
-    let airline =
+  SaveCourse() {
+    let course =
     {
-      "airlinename": this.airlinename,
-      "logo": this.logo,
-      "contactNum": this.conctnum,
-      "contactAddress": this.conctadd
+      "coursename": this.coursename,
+      "url": this.url,
+      "courseduration": this.courseduration,
+      "coursedescription": this.coursedescription,
+      "technology": this.technology,
+
     }
-    this.airlinename = "";
-    this.logo = "";
-    this.conctnum = 1000000000;
-    this.conctadd = "";
-    this.flightinfoService.registrationAirline(airline)
+    this.coursename = "";
+    this.url = "";
+    this.courseduration = 0;
+    this.coursedescription = "";
+    this.technology = "";
+    this.courseService.AddCourse(course)
       .subscribe((res: any) => {
         console.log(res)
         //console.log("Successful")
         alert("Successfully added")
-        this.loadAllAirlines()
+        this.loadAllCourse()
 
       },
         (err: any) => {
@@ -83,42 +86,46 @@ export class AddCourseComponent implements OnInit {
     }
     else {
       this.visibile = true;
-      this.airlinename = "";
-      this.logo = "";
-      this.conctnum = 1000000000;
-      this.conctadd = "";
+      this.coursename = "";
+      this.url = "";
+      this.courseduration = 0;
+      this.coursedescription = "";
+      this.technology = "";
+
     }
   }
 
   editbutton(id: string) {
-    this.flightinfoService.ShowAirlinebyId(id)
+    this.courseService.ShowCoursebyId(id)
       .subscribe((res: any) => {
         this.airId = res.id;
-        this.airlinename = res.airlinename;
-        this.logo = res.logo;
-        this.conctnum = res.contactNum;
-        this.conctadd = res.contactAddress;
         this.isedit = true;
-
+        this.coursename = res.coursename;
+        this.url = res.url;
+        this.courseduration = res.courseduration;
+        this.coursedescription = res.coursedescription;
+        this.technology = res.technology;
       },
         (err: any) => {
           console.log(err)
           this.errorMessage = err.message;
         })
   }
-  updateAirline() {
-    let airobj =
+  updateCourse() {
+    let course =
     {
-      "airlinename": this.airlinename,
-      "logo": this.logo,
-      "contactNum": this.conctnum,
-      "contactAddress": this.conctadd
+      "coursename": this.coursename,
+      "url": this.url,
+      "courseduration": this.courseduration,
+      "coursedescription": this.coursedescription,
+      "technology": this.technology,
+
     }
-    this.flightinfoService.EditAirline(this.airId, airobj)
+    this.courseService.EditCourse(this.airId, course)
       .subscribe(() => {
         this.isedit = false;
-        alert("Airline modified.")
-        this.loadAllAirlines()
+        alert("Course modified.")
+        this.loadAllCourse()
       },
         (err: any) => {
           console.log(err)
@@ -126,7 +133,7 @@ export class AddCourseComponent implements OnInit {
         })
   }
   CancelButton() {
-    this.loadAllAirlines()
+    this.loadAllCourse()
     this.isedit = false;
   }
 
