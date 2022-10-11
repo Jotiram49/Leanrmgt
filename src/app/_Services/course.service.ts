@@ -13,20 +13,20 @@ export class CourseService {
   }
   getCourse() {
     console.log("getting all Course")
-    return this.httpClient.get(this.url1 + "/courseController")
+    return this.httpClient.get(this.url1 + "/airlineController")
   }
   EditCourse(airid: any, course: any) {
     console.log("Sucessful editing Course...")
-    return this.httpClient.put(this.url1 + "/courseController/" + airid, course);
+    return this.httpClient.put(this.url1 + "/airlineController/" + airid, course);
   }
   deleteCourse(id: any) {
     console.log(this.url1 + "/courseController/" + id)
-    return this.httpClient.delete(this.url1 + "/courseController/" + id);
+    return this.httpClient.delete(this.url1 + "/airlineController/" + id);
   }
   AddCourse(course: any) {
-    return this.httpClient.post(this.url1 + "/courseController", course);
+    return this.httpClient.post(this.url1 + "/airlineController", course);
   }
   ShowCoursebyId(id: any) {
-    return this.httpClient.get(this.url1 + "/courseController/" + id);
+    return this.httpClient.get(this.url1 + "/airlineController/" + id);
   }
 }
