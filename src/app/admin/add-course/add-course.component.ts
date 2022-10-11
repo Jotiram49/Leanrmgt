@@ -1,11 +1,11 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FlightinfoService } from 'src/app/_Services/flightinfo.service';
 @Component({
-  selector: 'app-manage-airlines',
-  templateUrl: './manage-airlines.component.html',
-  styleUrls: ['./manage-airlines.component.scss']
+  selector: 'app-add-course',
+  templateUrl: './add-course.component.html',
+  styleUrls: ['./add-course.component.scss']
 })
-export class ManageAirlinesComponent implements OnInit {
+export class AddCourseComponent implements OnInit {
   errorMessage: string = ""
   result: any = {}
   Isresult = false

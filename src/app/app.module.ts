@@ -15,10 +15,10 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from "@angular/common/http";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { LoginSerService } from './_Services/login-ser.service';
 import { AuthGuard } from './auth.guard';
-import { ManageAirlinesComponent } from './admin/manage-airlines/manage-airlines.component';
+
 import { FlightComponent } from './flight/flight.component';
-import { ManageDiscountsComponent } from './admin/manage-discounts/manage-discounts.component';
-import { ManageScheduleComponent } from './admin/manage-schedule/manage-schedule.component';
+
+import { AddCourseComponent } from './admin/add-course/add-course.component';
 import { NgxMaterialTimepickerModule } from 'ngx-material-timepicker';
 import { BookFlightComponent } from './user/book-flight/book-flight.component';
 import { ManageBookingComponent } from './user/manage-booking/manage-booking.component';
@@ -37,10 +37,8 @@ import { ReportComponent } from './admin/report/report.component';
     AdminComponent,
     UserComponent,
     RegistrationComponent,
-    ManageAirlinesComponent,
+    AddCourseComponent,
     FlightComponent,
-    ManageDiscountsComponent,
-    ManageScheduleComponent,
     BookFlightComponent,
     ManageBookingComponent,
     HistoryComponent,

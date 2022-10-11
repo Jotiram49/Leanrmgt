@@ -1,9 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AdminComponent } from './admin/admin.component';
-import { ManageAirlinesComponent } from './admin/manage-airlines/manage-airlines.component';
-import { ManageDiscountsComponent } from './admin/manage-discounts/manage-discounts.component';
-import { ManageScheduleComponent } from './admin/manage-schedule/manage-schedule.component';
+import { AddCourseComponent } from './admin/add-course/add-course.component';
 import { ReportComponent } from './admin/report/report.component';
 import { AuthGuard } from './auth.guard';
 import { HomeComponent } from './home/home.component';
@@ -24,20 +22,11 @@ const routes: Routes = [
     component: AdminComponent,
     children: [
       {
-        path: 'Manage-Airlines',
-        component: ManageAirlinesComponent,
+        path: 'Add-Coures',
+        component: AddCourseComponent,
         canActivate: [AuthGuard]
       },
-      {
-        path: 'Manage-discount',
-        component: ManageDiscountsComponent,
-        canActivate: [AuthGuard]
-      },
-      {
-        path: 'Manage-schedule',
-        component: ManageScheduleComponent,
-        canActivate: [AuthGuard]
-      },
+     
       {
         path: 'Reports',
         component: ReportComponent,
