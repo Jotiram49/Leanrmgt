@@ -38,7 +38,7 @@ export class AddCourseComponent implements OnInit {
   }
   deleteCourse(airId: string) {
     if (confirm("Are you sure to delete the course?")) {
-      this.courseService.deleteAirline(airId)
+      this.courseService.deleteCourse(airId)
         .subscribe(
           () => {
             alert("course deleted.")

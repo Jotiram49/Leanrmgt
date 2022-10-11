@@ -19,9 +19,8 @@ export class CourseService {
     console.log("Sucessful editing Course...")
     return this.httpClient.put(this.url1 + "/courseController/" + airid, course);
   }
-  deleteAirline(id: any) {
+  deleteCourse(id: any) {
     console.log(this.url1 + "/courseController/" + id)
-    //return this.httpClient.delete(this.url+"/airline?id="+id);
     return this.httpClient.delete(this.url1 + "/courseController/" + id);
   }
   AddCourse(course: any) {
