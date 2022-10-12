@@ -80,13 +80,13 @@ export class LoginComponent {
             localStorage.setItem('Role', 'Admin')
             localStorage.setItem('username', 'Admin')
             console.log("Admin page..")
-            this.router.navigate(["admin"]);
+            this.router.navigate(["admin/Add-Coures"]);
         }
         else if (role === 2) {
             localStorage.setItem('User', id)
             localStorage.setItem('username', 'user')
             console.log("User page..")
-            this.router.navigate(["user"]);
+            this.router.navigate(["user/User-details"]);
         }
         else {
             console.log("Unauthorized")

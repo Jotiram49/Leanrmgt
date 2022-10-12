@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { CourseService } from 'src/app/_Services/course.service';
 @Component({
   selector: 'app-add-course',
@@ -9,26 +10,24 @@ export class AddCourseComponent implements OnInit {
   errorMessage: string = ""
   result: any = {}
   Isresult = false
-  coursename = "";
-  url = "";
+  courseName = "";
+  launchUrl = "";
   visibile = false;
-  courseduration = 0;
-  coursedescription = "";
+  courseDuration = 0;
+  courseDescription = "";
   technology = "";
   total_airlines = 0
   isedit = false
   airId = ""
-  constructor(private courseService: CourseService) { }
+
+  constructor(private courseService: CourseService,private router: Router) { }
   ngOnInit(): void {
     this.loadAllCourse()
   }
   loadAllCourse() {
     this.courseService.getCourse()
       .subscribe((res: any) => {
-        this.total_airlines = res.length;
-        if (this.total_airlines != 0) {
-          this.Isresult = true
-        }
+        
         this.result = res;
       },
         (err: any) => {
@@ -43,6 +42,7 @@ export class AddCourseComponent implements OnInit {
           () => {
             alert("course deleted.")
             this.loadAllCourse()
+           
           },
           (err) => console.log(err)
         );
@@ -54,25 +54,26 @@ export class AddCourseComponent implements OnInit {
   SaveCourse() {
     let course =
     {
-      "coursename": this.coursename,
-      "url": this.url,
-      "courseduration": this.courseduration,
-      "coursedescription": this.coursedescription,
+      "courseName": this.courseName,
+      "launchUrl": this.launchUrl,
+      "courseDuration": this.courseDuration,
+      "courseDescription": this.courseDescription,
       "technology": this.technology,
 
     }
-    this.coursename = "";
-    this.url = "";
-    this.courseduration = 0;
-    this.coursedescription = "";
+    this.courseName = "";
+    this.launchUrl = "";
+    this.courseDuration = 0;
+    this.courseDescription = "";
     this.technology = "";
+    //console.log("-----------------------", course)
     this.courseService.AddCourse(course)
       .subscribe((res: any) => {
         console.log(res)
         //console.log("Successful")
         alert("Successfully added")
-        this.loadAllCourse()
-
+       this.loadAllCourse()
+       
       },
         (err: any) => {
           console.log(err)
@@ -86,10 +87,12 @@ export class AddCourseComponent implements OnInit {
     }
     else {
       this.visibile = true;
-      this.coursename = "";
-      this.url = "";
-      this.courseduration = 0;
-      this.coursedescription = "";
+
+      this.courseName = "";
+      this.launchUrl = "";
+      this.courseDuration = 0;
+      this.courseDescription = "";
+      this.technology = "";
       this.technology = "";
 
     }
@@ -100,10 +103,10 @@ export class AddCourseComponent implements OnInit {
       .subscribe((res: any) => {
         this.airId = res.id;
         this.isedit = true;
-        this.coursename = res.coursename;
-        this.url = res.url;
-        this.courseduration = res.courseduration;
-        this.coursedescription = res.coursedescription;
+        this.courseName = res.courseName;
+        this.launchUrl = res.launchUrl;
+        this.courseDuration = res.courseDuration;
+        this.courseDescription = res.courseDescription;
         this.technology = res.technology;
       },
         (err: any) => {
@@ -114,10 +117,10 @@ export class AddCourseComponent implements OnInit {
   updateCourse() {
     let course =
     {
-      "coursename": this.coursename,
-      "url": this.url,
-      "courseduration": this.courseduration,
-      "coursedescription": this.coursedescription,
+      "courseName": this.courseName,
+      "launchUrl": this.launchUrl,
+      "courseDuration": this.courseDuration,
+      "courseDescription": this.courseDescription,
       "technology": this.technology,
 
     }

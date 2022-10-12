@@ -20,7 +20,7 @@ import { NgxMaterialTimepickerModule } from 'ngx-material-timepicker';
 import { UserDetailsComponent } from './user/user-details/user-details.component';
 import { DatePipe } from '@angular/common';
 import { AuthHttpInterceptorService } from './_Services/auth-http-interceptor.service';
-
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
 @NgModule({
   declarations: [
     AppComponent,
@@ -33,6 +33,7 @@ import { AuthHttpInterceptorService } from './_Services/auth-http-interceptor.se
     RegistrationComponent,
     AddCourseComponent,
     UserDetailsComponent,
+    
     //NgxMaterialTimepickerModule
   ],
   imports: [
@@ -44,7 +45,8 @@ import { AuthHttpInterceptorService } from './_Services/auth-http-interceptor.se
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    NgxMaterialTimepickerModule
+    NgxMaterialTimepickerModule,
+    Ng2SearchPipeModule
   ],
   providers: [LoginSerService, AuthGuard, DatePipe,
     {
