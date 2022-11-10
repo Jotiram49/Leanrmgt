@@ -20,9 +20,11 @@ export class UserDetailsComponent implements OnInit {
   launchUrl = "";
   courseDuration = 0;
   courseDescription = "";
+  
   constructor(private courseService: CourseService) { }
   ngOnInit(): void {
     this.loadAllCourse()
+   
   }
   loadAllCourse() {
     this.courseService.getCourse()
@@ -35,9 +37,20 @@ export class UserDetailsComponent implements OnInit {
         })
   }
 
-
-
   
+
+  SearchTechnology(technology: string) {  
+    let obj = this.result.filter((m: { technology: string; }) => m.technology == technology);  
+   // let obj = this.result.filter(m => m.Technology == technology);  
+    this.result = obj;  
+    return this.result;  
+}  
+SearchDuration(courseDuration: string) {  
+  let obj = this.result.filter((m: { courseDuration: string; }) => m.courseDuration == courseDuration);  
+ // let obj = this.result.filter(m => m.Technology == technology);  
+  this.result = obj;  
+  return this.result;  
+}  
 
 
 

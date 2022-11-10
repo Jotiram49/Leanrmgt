@@ -6,10 +6,12 @@ import { map } from 'rxjs/operators';
 }
 )
 export class LoginSerService {
-  url1:string= "http://localhost:8989/user/userController"
-  url2:string="http://localhost:8989/authenticate"
-  //url1: string = "http://ec2-18-189-20-2.us-east-2.compute.amazonaws.com:8989/user/userController"
- // url2: string = "http://ec2-18-189-20-2.us-east-2.compute.amazonaws.com:8989/authenticate"
+  //url1:string= "http://localhost:8989/user/userController"
+  //url2:string="http://localhost:8989/authenticate"
+ url1: string = "http://Apigatway-env.eba-pmpja7ps.ap-northeast-1.elasticbeanstalk.com/user/userController"
+ url2: string = "http://Apigatway-env.eba-pmpja7ps.ap-northeast-1.elasticbeanstalk.com/authenticate"
+  
+  
   constructor(private httpClient: HttpClient) {
 
   }

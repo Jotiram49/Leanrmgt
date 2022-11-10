@@ -4,10 +4,11 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
   providedIn: 'root'
 })
 export class CourseService {
-  url1: string = "http://localhost:8989/admin/API";
-  url2: string = "http://localhost:8989/user";
-  // url1: string = "http://ec2-18-189-20-2.us-east-2.compute.amazonaws.com:8989/admin/API";
-  //url2: string = "http://ec2-18-189-20-2.us-east-2.compute.amazonaws.com:8989/user";
+ // url1: string = "http://localhost:8989/admin/API";
+  //url2: string = "http://localhost:8989/user";
+   url1: string = "http://Apigatway-env.eba-pmpja7ps.ap-northeast-1.elasticbeanstalk.com/admin/API";
+  url2: string = "http://Apigatway-env.eba-pmpja7ps.ap-northeast-1.elasticbeanstalk.com/user";
+  
   constructor(private httpClient: HttpClient) {
 
   }
